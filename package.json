@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --fix src/*.{js,vue} && eslint --fix src/**/*.{js,vue}",
-    "format": "prettier --find-config-path -w src/*.{js,vue} && prettier --find-config-path -w src/**/*.{js.vue}"
+    "format": "prettier --find-config-path -w src/*.{js,vue} && prettier --find-config-path -w src/**/*.{js.vue}",
+    "lint-staged": "eslint --fix ",
+    "format-staged": "prettier --find-config-path -w "
   },
   "dependencies": {
     "@arkweid/lefthook": "^0.7.7",

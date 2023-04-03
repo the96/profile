@@ -1,22 +1,15 @@
 # EXAMPLE USAGE
 # Refer for explanation to following link:
 # https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
-#
-# pre-push:
-#   commands:
-#     packages-audit:
-#       tags: frontend security
-#       run: yarn audit
-#     gems-audit:
-#       tags: backend security
-#       run: bundle audit
 
 pre-commit:
-  parallel: true
+  parallel: false
   commands:
+    check_not_staged_files:
+      run: if [ `git status --short | awk '$1~/^MM/&&$2~/\.(js|vue)$/' | wc -l` -eq 0 ];then exit 0;else echo 'Unstaged changes were found in the js/vue files.'; exit 1; fi
     prettier:
       glob: '{src/**/*.{js,vue}, src/*.{js,vue}}'
-      run: npm run prettier --find-config-path -w
+      run: npm run format-staged {staged_files}
     eslint:
       glob: '{src/**/*.{js,vue}, src/*.{js,vue}}'
-      run: npm run eslint --fix {staged_files}
+      run: npm run lint-staged {staged_files}
