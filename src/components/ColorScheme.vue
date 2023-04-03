@@ -1,16 +1,37 @@
 <template>
   <h2>ColorScheme</h2>
-  <button @click="changeScheme()">change scheme</button>
+  <button @click="changeScheme()">
+    change scheme
+  </button>
   <h3>colorScheme: {{ currentSchemeKey }} </h3>
   <template v-for="colorCode in currentScheme">
     <div :style="{background: getBackgroundColor(colorCode)}">
-      <div class="color-sample" :style="{ background: colorCode }"></div>
-      <span class="color-code" :style="{ color: colorCode }">{{ colorCode }}</span>
+      <div
+        class="color-sample"
+        :style="{ background: colorCode }"
+      />
+      <span
+        class="color-code"
+        :style="{ color: colorCode }"
+      >{{ colorCode }}</span>
     </div>
   </template>
 
-  <div ref="tweet" class="tweet">
-    <blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">カラースキーム考えるの面倒くさくてChatGPTに考えてもらった <a href="https://t.co/h7TCykBt3Y">pic.twitter.com/h7TCykBt3Y</a></p>&mdash; the96 (@the96pm) <a href="https://twitter.com/the96pm/status/1642842989994336257?ref_src=twsrc%5Etfw">April 3, 2023</a></blockquote>
+  <div
+    ref="tweet"
+    class="tweet"
+  >
+    <blockquote
+      class="twitter-tweet"
+      data-partner="tweetdeck"
+    >
+      <p
+        lang="ja"
+        dir="ltr"
+      >
+        カラースキーム考えるの面倒くさくてChatGPTに考えてもらった <a href="https://t.co/h7TCykBt3Y">pic.twitter.com/h7TCykBt3Y</a>
+      </p>&mdash; the96 (@the96pm) <a href="https://twitter.com/the96pm/status/1642842989994336257?ref_src=twsrc%5Etfw">April 3, 2023</a>
+    </blockquote>
   </div>
 </template>
 
@@ -116,6 +137,12 @@ export default {
       return this.schemes[this.schemeIndex].scheme
     },
   },
+  mounted () {
+    const tweet = this.$refs.tweet
+    twttr.ready(() => {
+      twttr.widgets.load(tweet)
+    })
+  },
   methods: {
     changeScheme() {
       const lastIndex = this.schemes.length - 1
@@ -133,12 +160,6 @@ export default {
       const needWhite = (red < 0x7f ? 1 : 0) + (green < 0x7f ? 1 : 0) + (blue < 0x7f ? 1 : 0)
       return needWhite ? '#ffffff' : '#000000'
     },
-  },
-  mounted () {
-    const tweet = this.$refs.tweet
-    twttr.ready(() => {
-      twttr.widgets.load(tweet)
-    })
   },
 }
 </script>
