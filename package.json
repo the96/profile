@@ -11,6 +11,7 @@
     "format": "prettier --find-config-path -w src/*.{js,vue} && prettier --find-config-path -w src/**/*.{js.vue}"
   },
   "dependencies": {
+    "@arkweid/lefthook": "^0.7.7",
     "@vue/eslint-config-prettier": "^7.1.0",
     "prettier": "^2.8.7",
     "vue": "^3.2.47",
