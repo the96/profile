@@ -3,7 +3,7 @@
 # https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
 
 pre-commit:
-  parallel: false
+  parallel: true
   commands:
     check_not_staged_files:
       run: if [ `git status --short | awk '$1~/^MM/&&$2~/\.(js|vue)$/' | wc -l` -eq 0 ];then exit 0;else echo 'Unstaged changes were found in the js/vue files.'; exit 1; fi
