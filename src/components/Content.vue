@@ -1,6 +1,5 @@
 <template>
-  <h2>Welcome</h2>
-  <p>WIP</p>
+  <h2>Content</h2>
 </template>
 
 <script>
