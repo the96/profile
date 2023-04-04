@@ -111,8 +111,8 @@ export default {
 .color-sample {
   width: 1em;
   height: 1em;
+  border: 0;
   border-radius: 0.5em;
-  border: 0px;
 }
 
 .tweet {

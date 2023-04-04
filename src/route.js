@@ -1,4 +1,4 @@
-import Home from './components/Home.vue'
+import DefaultLayout from './components/DefaultLayout.vue'
 import Index from './components/Index.vue'
 import Content from './components/Content.vue'
 import Credit from './components/Credit.vue'
@@ -7,8 +7,8 @@ import ColorScheme from './components/ColorScheme.vue'
 export default [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'root',
+    component: DefaultLayout,
     children: [
       {
         path: '',
