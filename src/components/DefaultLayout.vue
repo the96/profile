@@ -35,20 +35,20 @@ export default {
 
   display: flex;
   align-items: center;
-  height: 48px;
   background-color: $header-color;
+  height: 48px;
 
   .logo {
     $logo-color: #3d5c8d;
 
-    height: 32px;
-    padding: 0 8px;
     margin: 4px 0 4px 24px;
-    font-family: fonts.$logo-font;
-    font-size: 20px;
-    color: $logo-color;
-    background-color: #fff;
     border-radius: 8px;
+    background-color: #fff;
+    padding: 0 8px;
+    height: 32px;
+    color: $logo-color;
+    font-size: 20px;
+    font-family: fonts.$logo-font;
 
     a {
       text-decoration: none;
@@ -64,14 +64,14 @@ export default {
   .navigation {
     display: flex;
     align-items: center;
+    margin: 0 4px;
     width: 100%;
     height: 48px;
-    margin: 0 4px;
 
     .navigation-item {
       display: flex;
-      height: 32px;
       margin: 0 4px;
+      height: 32px;
 
       &::before,
       &::marker {
@@ -81,12 +81,12 @@ export default {
       .navigation-label {
         $text-color: #333;
 
-        padding: 4px 10px;
-        font-weight: 700;
-        color: $text-color;
-        text-decoration: none;
-        background-color: lighten($header-color, 15%);
         border-radius: 8px;
+        background-color: lighten($header-color, 15%);
+        padding: 4px 10px;
+        color: $text-color;
+        font-weight: 700;
+        text-decoration: none;
 
         &:link,
         &:visited,

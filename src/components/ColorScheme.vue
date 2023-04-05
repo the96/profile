@@ -109,10 +109,10 @@ export default {
 
 <style scoped>
 .color-sample {
-  width: 1em;
-  height: 1em;
   border: 0;
   border-radius: 0.5em;
+  width: 1em;
+  height: 1em;
 }
 
 .tweet {
