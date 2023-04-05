@@ -10,7 +10,9 @@
     </ul>
   </header>
   <div class="content-root">
-    <router-view name="main-content-view" />
+    <div class="content">
+      <router-view name="main-content-view" />
+    </div>
   </div>
 </template>
 
@@ -29,34 +31,37 @@ export default {
 
 <style scoped lang="scss">
 @use '@/fonts.scss';
+@use '@/color.scss';
 
+$header-height: 64px;
 .header {
-  $header-color: #3cb371;
+  $header-color: color.$main-color;
 
   display: flex;
   align-items: center;
   background-color: $header-color;
-  height: 48px;
+  height: $header-height;
 
   .logo {
-    $logo-color: #3d5c8d;
-
+    display: flex;
+    align-items: center;
     margin: 4px 0 4px 24px;
     border-radius: 8px;
     background-color: #fff;
     padding: 0 8px;
-    height: 32px;
-    color: $logo-color;
+    height: 48px;
+    color: color.$logo-color;
     font-size: 20px;
     font-family: fonts.$logo-font;
 
     a {
+      text-align: center;
       text-decoration: none;
 
       &:link,
       &:visited,
       &:active {
-        color: $logo-color;
+        color: color.$logo-color;
       }
     }
   }
@@ -66,36 +71,32 @@ export default {
     align-items: center;
     margin: 0 4px;
     width: 100%;
-    height: 48px;
-
     .navigation-item {
       display: flex;
+      align-items: center;
       margin: 0 4px;
-      height: 32px;
+      border-radius: 8px;
+      background-color: lighten($header-color, 15%);
+      height: 48px;
 
       &::before,
       &::marker {
         content: '';
       }
 
-      .navigation-label {
-        $text-color: #333;
+      &:hover {
+        background-color: lighten($header-color, 25%);
+      }
 
-        border-radius: 8px;
-        background-color: lighten($header-color, 15%);
+      .navigation-label {
         padding: 4px 10px;
-        color: $text-color;
         font-weight: 700;
         text-decoration: none;
 
         &:link,
         &:visited,
         &:active {
-          color: $text-color;
-        }
-
-        &:hover {
-          background-color: lighten($header-color, 25%);
+          color: color.$text-color;
         }
       }
     }
@@ -103,6 +104,16 @@ export default {
 }
 
 .content-root {
-  margin: 16px;
+  position: absolute;
+  top: $header-height;
+  background-color: color.$background-color;
+  width: 100%;
+
+  .content {
+    margin: auto;
+    background-color: color.$white;
+    padding: 16px 48px 96px;
+    width: 80vw;
+  }
 }
 </style>

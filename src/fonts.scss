@@ -1,10 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=M+PLUS+1p:wght@100;400;700&display=swap');
+@use '@/color.scss';
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Sawarabi+Gothic&family=Ubuntu:wght@300;400;700&display=swap');
 
-$font: 'M PLUS 1p', sans-serif;
+$default-font: 'Ubuntu', 'Sawarabi Gothic', sans-serif;
 $logo-font: 'Dosis', sans-serif;
 
+$size-xsmall: 16px;
+$size-small: 18px;
+$size-default: 20px;
+$size-large: 24px;
+
 html {
-  font-family: 'M PLUS 1p', sans-serif;
-  font-size: 16px;
+  color: color.$text-color;
   font-weight: 400;
+  font-size: $size-default;
+  font-family: $default-font;
 }

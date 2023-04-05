@@ -1,7 +1,7 @@
 export default [
   {
     key: 'profile',
-    label: 'Profile',
+    label: 'About me',
     path: '/',
   },
   {
