@@ -1,6 +1,6 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recess-order", "stylelint-config-recommended-vue"],
-  "plugins": ["stylelint-scss", "stylelint-order"],
+  "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order", "stylelint-config-recommended-vue"],
+  "plugins": ["stylelint-scss", "stylelint-order", "stylelint-prettier"],
   "ignoreFiles": ["**/node_modules/**"],
   "rules": {
     "at-rule-no-unknown": null,
@@ -9,11 +9,11 @@
   "overrides": [
     {
       "files": ["**/*.scss"],
-      "extends": ["stylelint-config-standard", "stylelint-config-recess-order"]
+      "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order"]
     },
     {
       "files": ["**/*.vue"],
-      "extends": ["stylelint-config-standard", "stylelint-config-recess-order", "stylelint-config-recommended-vue"]
+      "extends": ["stylelint-config-standard-scss", "stylelint-config-recess-order", "stylelint-config-recommended-vue"]
     }
   ]
 }
