@@ -5,10 +5,11 @@
 </template>
 
 <style lang="scss">
-@use '@/fonts.scss';
+@use '@/scss/fonts.scss';
+@use '@/scss/app.scss';
 
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 </style>

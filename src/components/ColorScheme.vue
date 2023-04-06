@@ -1,23 +1,25 @@
 <template>
-  <h2>ColorScheme</h2>
-  <button @click="changeScheme()">change scheme</button>
-  <h3>colorScheme: {{ currentSchemeKey }}</h3>
-  <template v-for="colorCode in currentScheme" :key="colorCode.key">
-    <div :style="{ background: getBackgroundColor(colorCode) }">
-      <div class="color-sample" :style="{ background: colorCode }" />
-      <span class="color-code" :style="{ color: colorCode }">{{ colorCode }}</span>
-    </div>
-  </template>
+  <div>
+    <h2>ColorScheme</h2>
+    <button @click="changeScheme()">change scheme</button>
+    <h3>colorScheme: {{ currentSchemeKey }}</h3>
+    <template v-for="colorCode in currentScheme" :key="colorCode.key">
+      <div :style="{ background: getBackgroundColor(colorCode) }">
+        <div class="color-sample" :style="{ background: colorCode }" />
+        <span class="color-code" :style="{ color: colorCode }">{{ colorCode }}</span>
+      </div>
+    </template>
 
-  <div ref="tweet" class="tweet">
-    <blockquote class="twitter-tweet" data-partner="tweetdeck">
-      <p lang="ja" dir="ltr">
-        カラースキーム考えるの面倒くさくてChatGPTに考えてもらった
-        <a href="https://t.co/h7TCykBt3Y">pic.twitter.com/h7TCykBt3Y</a>
-      </p>
-      &mdash; the96 (@the96pm)
-      <a href="https://twitter.com/the96pm/status/1642842989994336257?ref_src=twsrc%5Etfw">April 3, 2023</a>
-    </blockquote>
+    <div ref="tweet" class="tweet">
+      <blockquote class="twitter-tweet" data-partner="tweetdeck">
+        <p lang="ja" dir="ltr">
+          カラースキーム考えるの面倒くさくてChatGPTに考えてもらった
+          <a href="https://t.co/h7TCykBt3Y">pic.twitter.com/h7TCykBt3Y</a>
+        </p>
+        &mdash; the96 (@the96pm)
+        <a href="https://twitter.com/the96pm/status/1642842989994336257?ref_src=twsrc%5Etfw">April 3, 2023</a>
+      </blockquote>
+    </div>
   </div>
 </template>
 

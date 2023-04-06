@@ -11,7 +11,9 @@
   </header>
   <div class="content-root">
     <div class="content">
-      <router-view name="main-content-view" />
+      <Transition name="main-content" mode="out-in">
+        <router-view name="main-content-view" />
+      </Transition>
     </div>
   </div>
 </template>
@@ -30,15 +32,19 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use '@/fonts.scss';
-@use '@/color.scss';
+@use '@/scss/fonts.scss';
+@use '@/scss/color.scss';
 
 $header-height: 64px;
+
 .header {
   $header-color: color.$main-color;
 
   display: flex;
+  position: sticky;
+  top: 0;
   align-items: center;
+  z-index: 10;
   background-color: $header-color;
   height: $header-height;
 
@@ -71,6 +77,7 @@ $header-height: 64px;
     align-items: center;
     margin: 0 4px;
     width: 100%;
+
     .navigation-item {
       display: flex;
       align-items: center;
@@ -104,16 +111,27 @@ $header-height: 64px;
 }
 
 .content-root {
-  position: absolute;
-  top: $header-height;
+  position: relative;
   background-color: color.$background-color;
   width: 100%;
+  min-height: calc(100vh - $header-height);
 
   .content {
     margin: auto;
     background-color: color.$white;
     padding: 16px 48px 96px;
     width: 80vw;
+
+    .main-content-enter-active,
+    .main-content-leave-active {
+      transition: opacity 0.35s cubic-bezier(0.95, 0.05, 0.795, 0.035), transform 0.35s ease;
+    }
+
+    .main-content-enter-from,
+    .main-content-leave-to {
+      transform: translateY(100px);
+      opacity: 0;
+    }
   }
 }
 </style>

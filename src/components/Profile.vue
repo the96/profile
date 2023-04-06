@@ -1,7 +1,7 @@
 <template>
   <div class="about-me">
     <h2>About me</h2>
-    <div class="profile">
+    <div class="profile" v-if="visible">
       <div class="icon">
         <img src="src/assets/icon.jpg" class="icon-img" />
       </div>
@@ -40,12 +40,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      visible: true,
+    }
+  },
+  methods: {
+    toggleVisible() {
+      this.visible = !this.visible
+    },
+  },
+}
 </script>
 
 <style scoped lang="scss">
-@use '@/color.scss';
-@use '@/fonts.scss';
+@use '@/scss/color.scss';
+@use '@/scss/fonts.scss';
 
 .profile {
   display: flex;
@@ -81,6 +92,7 @@ export default {}
 
     .info-group {
       margin: 0 0 12px;
+
       .label {
         color: color.$gray;
         font-size: fonts.$size-small;

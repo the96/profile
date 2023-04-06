@@ -1,5 +1,5 @@
 import DefaultLayout from './components/DefaultLayout.vue'
-import Index from './components/Index.vue'
+import Profile from './components/Profile.vue'
 import Content from './components/Content.vue'
 import Credit from './components/Credit.vue'
 import ColorScheme from './components/ColorScheme.vue'
@@ -12,9 +12,9 @@ export default [
     children: [
       {
         path: '',
-        name: 'index',
+        name: 'profile',
         components: {
-          'main-content-view': Index,
+          'main-content-view': Profile,
         },
       },
       {
