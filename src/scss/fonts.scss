@@ -1,18 +1,45 @@
-@use '@/scss/color.scss';
-
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Sawarabi+Gothic&family=Ubuntu:wght@300;400;700&display=swap');
+// @use '@/scss/color.scss';
+@import 'https://fonts.googleapis.com/css2?family=Dosis:wght@800&family=Sawarabi+Gothic&family=Ubuntu:wght@300;400;700&display=swap';
 
 $default-font: 'Ubuntu', 'Sawarabi Gothic', sans-serif;
 $logo-font: 'Dosis', sans-serif;
-
 $size-xsmall: 16px;
 $size-small: 18px;
 $size-default: 20px;
 $size-large: 24px;
+$size-xlarge: 36px;
+$size-xxlarge: 72px;
+
+.font-xsmall {
+  font-size: $size-xsmall;
+}
+
+.font-small {
+  font-size: $size-small;
+}
+
+.font-default {
+  font-size: $size-default;
+}
+
+.font-large {
+  font-size: $size-large;
+}
+
+.font-xlarge {
+  font-size: $size-xlarge;
+}
+
+.font-xxlarge {
+  font-size: $size-xxlarge;
+}
+
+.font-bold {
+  font-weight: 700;
+}
 
 html {
   font-family: $default-font;
   font-size: $size-default;
   font-weight: 400;
-  color: color.$text-color;
 }
