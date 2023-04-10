@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import Top from '@/components/Top.vue'
-import AboutMe from '@/components/AboutMe.vue'
-import WorkSkill from '@/components/WorkSkill.vue'
-import OtherSkill from '@/components/OtherSkill.vue'
-import Works from '@/components/Works.vue'
-import Accounts from '@/components/Accounts.vue'
+import Top from '@/components/pages/Top.vue'
+import AboutMe from '@/components/pages/AboutMe.vue'
+import WorkSkill from '@/components/pages/WorkSkill.vue'
+import OtherSkill from '@/components/pages/OtherSkill.vue'
+import Works from '@/components/pages/Works.vue'
+import Accounts from '@/components/pages/Accounts.vue'
 
 export default {
   components: { Top, AboutMe, WorkSkill, OtherSkill, Works, Accounts },

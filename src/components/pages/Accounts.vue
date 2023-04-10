@@ -1,12 +1,19 @@
 <template>
   <div class="accounts page">
     <span class="font-xxlarge">Account</span>
-    <p>SNSなどのアカウントです。工事中</p>
-    <ul class="content">
-      <li class="item">GitHub</li>
-    </ul>
+    <AccountCard user-name="the96"></AccountCard>
   </div>
 </template>
+
+<script>
+import AccountCard from '@/components/presentationals/AccountCard.vue'
+
+export default {
+  components: {
+    AccountCard,
+  },
+}
+</script>
 
 <style scoped lang="scss">
 @use '@/scss/page.scss';
