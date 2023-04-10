@@ -49,7 +49,6 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.repository = data
-          console.log(this.repository)
         })
     },
     openGitHubRepository() {
