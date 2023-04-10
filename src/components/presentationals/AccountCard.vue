@@ -163,7 +163,15 @@ export default {
 
     .github-link {
       margin-left: 4px;
+      color: color.$grey-700;
+      text-decoration: none;
       vertical-align: baseline;
+
+      &:hover,
+      &:visited,
+      &:link {
+        color: none;
+      }
     }
   }
 }
