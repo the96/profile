@@ -10,18 +10,33 @@
         >
       </li>
       <li class="item">
-        <p>Google Meetの出欠確認ツールでした。</p>
-        <p>公式で出欠確認できるようになったため、晴れてお役御免となりました。</p>
-        <div class="item-link">
-          <object
-            type="image/svg+xml"
-            data="https://gh-card.dev/repos/the96/AttendanceChecker.svg?fullname=&link_target=_blank"
-          ></object>
-        </div>
+        <p>Google Meetの出欠確認をするChrome拡張です。</p>
+        <p>業務中のMTGでメンバーの確認に時間がかかっていて無駄だと思ったため、拡張機能として実装しました。</p>
+        <p>現在では公式で出欠確認できるようになったため、晴れてお役御免となりました。</p>
+        <RepositoryCard owner-name="the96" repos-name="AttendanceChecker" class="card" />
+      </li>
+      <li class="item">
+        <p>ぷよぷよテトリスの勝敗を自動でカウントするツールです。</p>
+        <p>
+          ぷよぷよ公式SNSで公開<a href="https://puyo-camp.jp/posts/57455">[1]</a
+          ><a href="https://puyo-camp.jp/posts/57876">[2]</a>し、コミュニティ内で当時のデイリー2,
+          3位くらいの反応をいただきました。
+        </p>
+        <RepositoryCard owner-name="the96" repos-name="PT-Logger" class="card" />
       </li>
     </ul>
   </div>
 </template>
+
+<script>
+import RepositoryCard from '@/components/presentationals/RepositoryCard.vue'
+
+export default {
+  components: {
+    RepositoryCard,
+  },
+}
+</script>
 
 <style scoped lang="scss">
 @use '@/scss/page.scss';
@@ -51,8 +66,8 @@
         }
       }
 
-      div.item-link {
-        margin: 24px;
+      .card {
+        margin: 24px auto 0;
       }
 
       .about {

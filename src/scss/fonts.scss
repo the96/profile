@@ -3,13 +3,18 @@
 
 $default-font: 'Ubuntu', 'Sawarabi Gothic', sans-serif;
 $logo-font: 'Dosis', sans-serif;
-$size-xxsmall: 12px;
+$size-xxxsmall: 12px;
+$size-xxsmall: 14px;
 $size-xsmall: 16px;
 $size-small: 18px;
 $size-default: 20px;
 $size-large: 24px;
 $size-xlarge: 36px;
 $size-xxlarge: 72px;
+
+.font-xxxsmall {
+  font-size: $size-xxxsmall;
+}
 
 .font-xxsmall {
   font-size: $size-xxsmall;
@@ -23,7 +28,7 @@ $size-xxlarge: 72px;
   font-size: $size-small;
 }
 
-.font-default {
+.font-medium {
   font-size: $size-default;
 }
 

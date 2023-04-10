@@ -1,17 +1,17 @@
 <template>
   <div class="account-card">
-    <div v-if="wasLoadedUser">
-      <body class="github-body" @click="openGitHubProfile()">
+    <div v-if="finishedLoadUser">
+      <body class="account" @click="openGitHubProfile()">
         <div class="avatar">
           <img :src="user.avatar_url" />
         </div>
         <div class="name-area">
-          <span class="name font-bold font-large">{{ user.name }}</span>
+          <h1 class="name font-bold font-large">{{ user.name }}</h1>
           <span class="nickname font-xthin">{{ user.name }}</span>
         </div>
         <div class="profile">
           <p class="bio font-xsmall font-thin">{{ user.bio }}</p>
-          <div class="social font-xxsmall">
+          <div class="social font-xxxsmall">
             <a class="social-link" :href="followersPageLink"
               ><span>{{ user.followers }}</span
               ><span class="postfix"> followers</span></a
@@ -23,10 +23,10 @@
           </div>
         </div>
       </body>
-      <footer class="github-footer">
+      <div class="github">
         <img class="github-icon" src="@/assets/github-mark.png" href="https://github.com" />
         <a class="github-link font-xxsmall" href="https://github.com">github.com</a>
-      </footer>
+      </div>
     </div>
   </div>
 </template>
@@ -42,8 +42,8 @@ export default {
     }
   },
   computed: {
-    wasLoadedUser() {
-      return Object.keys(this.user).length > 0
+    finishedLoadUser() {
+      return !!this.user && Object.keys(this.user).length > 0
     },
     followersPageLink() {
       return `${this.user.html_url}?tab=followers`
@@ -59,7 +59,6 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           this.user = data
-          console.log(this.user)
         })
     },
     openGitHubProfile() {
@@ -78,15 +77,18 @@ export default {
 
 .account-card {
   $width: 240px;
+  $height: 450px;
   $padding: 20px;
 
+  position: relative;
+  height: $height;
   font-family: 'Noto Sans JP';
   cursor: pointer;
-  background-color: color.$grey-1000;
+  background-color: color.$white;
   border: 1px solid color.$grey-400;
   border-radius: 8px;
 
-  .github-body {
+  .account {
     position: relative;
     width: $width;
     padding: $padding;
@@ -151,7 +153,10 @@ export default {
     }
   }
 
-  .github-footer {
+  .github {
+    position: absolute;
+    right: 0;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: right;
