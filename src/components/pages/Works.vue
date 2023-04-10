@@ -24,6 +24,11 @@
         </p>
         <RepositoryCard owner-name="the96" repos-name="PT-Logger" class="card" />
       </li>
+      <li class="item">
+        <p>このサイトのリポジトリです。</p>
+        <p>突貫工事でしたが、普段触らないViteやlint、prettierなどのフロントの環境構築をちょっとがんばりました</p>
+        <RepositoryCard owner-name="the96" repos-name="profile" class="card" />
+      </li>
     </ul>
   </div>
 </template>
