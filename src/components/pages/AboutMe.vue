@@ -1,6 +1,6 @@
 <template>
   <div class="about-me page">
-    <p class="font-xxlarge">About me</p>
+    <p class="font-xxlarge title">About me</p>
     <div class="content">
       <div class="icon">
         <img src="src/assets/icon.jpg" class="icon-img" />
@@ -48,40 +48,67 @@
 <style scoped lang="scss">
 @use '@/scss/page.scss';
 @use '@/scss/color.scss';
+@use '@/scss/fonts.scss';
 
 .about-me {
   background-color: color.$indigo-100;
 
   .content {
     display: flex;
-    margin: 36px 0;
+
+    @media screen and (max-width: 599px) {
+      margin: 8px 0;
+    }
+
+    @media screen and (min-width: 600px) {
+      margin: 36px 0;
+    }
 
     .emphasis {
       font-weight: 700;
-      text-decoration: underline solid 4px color.$indigo-700;
+      text-decoration: underline;
+      text-decoration-thickness: 4px;
+      text-decoration-style: solid;
+      text-decoration-color: color.$indigo-700;
     }
 
     .icon {
-      $size: 200px;
-
       flex-shrink: 0;
-      width: $size;
-      height: $size;
       overflow: hidden;
       border: 2px solid #e0e0e0;
-      border-radius: calc($size / 2);
       box-shadow: 3px 3px 6px 0 #777;
 
       .icon-img {
-        width: $size - 4px;
-        height: $size - 4px;
         border: 2px solid #fff;
-        border-radius: calc($size / 2 - 4px);
+      }
+
+      @media screen and (max-width: 599px) {
+        display: none;
+      }
+
+      @media screen and (min-width: 600px) {
+        $size: 200px;
+
+        width: $size;
+        height: $size;
+        border-radius: calc($size / 2);
+
+        .icon-img {
+          width: $size - 4px;
+          height: $size - 4px;
+          border-radius: calc($size / 2 - 4px);
+        }
       }
     }
 
     .information {
-      margin-left: 24px;
+      @media screen and (max-width: 599px) {
+      }
+
+      @media screen and (min-width: 600px) {
+        margin-left: 24px;
+      }
+
       line-break: anywhere;
 
       .info-group {

@@ -66,16 +66,107 @@ export default {
 @use '@/scss/color.scss';
 
 .repository-card {
-  $width: 540px;
-  $height: 160px;
+  @media screen and (max-width: 599px) {
+    $width: 320px;
+    $height: 160px;
+
+    width: $width;
+    min-width: $width;
+    max-width: $width;
+    height: $height;
+    min-height: $height;
+    max-height: $height;
+
+    .repository {
+      $img-margin: 20px;
+      $img-radius: calc($height / 2) - $img-margin;
+
+      .image-wrapper {
+        top: $img-margin;
+        right: $img-margin;
+        border-radius: $img-radius;
+
+        .image {
+          width: calc($img-radius * 2);
+          height: calc($img-radius * 2);
+        }
+      }
+    }
+
+    .information {
+      max-width: calc($width * 0.7);
+
+      .description {
+        margin-top: 8px;
+      }
+    }
+
+    .github {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin: 0 8px 8px;
+
+      .github-icon {
+        width: 28px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    $width: 540px;
+    $height: 160px;
+
+    width: $width;
+    min-width: $width;
+    max-width: $width;
+    height: $height;
+    min-height: $height;
+    max-height: $height;
+
+    .repository {
+      $img-margin: 20px;
+      $img-radius: calc($height / 2) - $img-margin;
+
+      .image-wrapper {
+        top: $img-margin;
+        right: $img-margin;
+        border-radius: $img-radius;
+
+        .image {
+          width: calc($img-radius * 2);
+          height: calc($img-radius * 2);
+        }
+      }
+    }
+
+    .information {
+      max-width: calc($width * 0.7);
+
+      .description {
+        margin-top: 8px;
+      }
+    }
+
+    .github {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin: 0 8px 8px;
+
+      .github-icon {
+        width: 28px;
+      }
+    }
+  }
 
   position: relative;
-  width: $width;
-  min-width: $width;
-  max-width: $width;
-  height: $height;
-  min-height: $height;
-  max-height: $height;
   overflow: hidden;
   font-family: 'Noto Sans JP';
   cursor: pointer;
@@ -86,20 +177,12 @@ export default {
   .repository {
     margin: 12px;
 
-    $img-margin: 20px;
-    $img-radius: $height / 2 - $img-margin;
-
     .image-wrapper {
       position: absolute;
-      top: $img-margin;
-      right: $img-margin;
       z-index: 1;
       overflow: hidden;
-      border-radius: $img-radius;
 
       .image {
-        width: calc($img-radius * 2);
-        height: calc($img-radius * 2);
         filter: opacity(0.5);
       }
     }
@@ -107,7 +190,6 @@ export default {
     .information {
       position: relative;
       z-index: 2;
-      max-width: calc($width * 0.7);
 
       .name {
         display: flex;

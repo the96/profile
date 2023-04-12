@@ -17,31 +17,73 @@ $size-xxlarge: 72px;
 }
 
 .font-xxsmall {
-  font-size: $size-xxsmall;
+  @media screen and (max-width: 599px) {
+    font-size: $size-xxxsmall;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-xxsmall;
+  }
 }
 
 .font-xsmall {
-  font-size: $size-xsmall;
+  @media screen and (max-width: 599px) {
+    font-size: $size-xxsmall;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-xsmall;
+  }
 }
 
 .font-small {
-  font-size: $size-small;
+  @media screen and (max-width: 599px) {
+    font-size: $size-xsmall;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-small;
+  }
 }
 
 .font-medium {
-  font-size: $size-default;
+  @media screen and (max-width: 599px) {
+    font-size: $size-small;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-default;
+  }
 }
 
 .font-large {
-  font-size: $size-large;
+  @media screen and (max-width: 599px) {
+    font-size: $size-default;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-large;
+  }
 }
 
 .font-xlarge {
-  font-size: $size-xlarge;
+  @media screen and (max-width: 599px) {
+    font-size: $size-large;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-xlarge;
+  }
 }
 
 .font-xxlarge {
-  font-size: $size-xxlarge;
+  @media screen and (max-width: 599px) {
+    font-size: $size-xxlarge * 0.75;
+  }
+  
+  @media screen and (min-width: 600px) {
+    font-size: $size-xxlarge;
+  }
 }
 
 .font-xthin {

@@ -49,17 +49,17 @@
     margin: 36px 0;
 
     .item {
+      list-style: none;
+
       &:nth-child(n + 2) {
         margin-top: 24px;
       }
 
-      &::before,
-      &::marker {
-        content: '';
-      }
-
       .about {
-        text-decoration: solid underline color.$teal-400 1px;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-style: solid;
+        text-decoration-color: color.$teal-400;
       }
 
       .details {

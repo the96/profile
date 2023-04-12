@@ -12,16 +12,12 @@
       <li class="item">
         <p>Google Meetの出欠確認をするChrome拡張です。</p>
         <p>業務中のMTGでメンバーの確認に時間がかかっていて無駄だと思ったため、拡張機能として実装しました。</p>
-        <p>現在では公式で出欠確認できるようになったため、晴れてお役御免となりました。</p>
+        <p>（現在では公式で出欠確認できるようになったため、晴れてお役御免となりました）</p>
         <RepositoryCard owner-name="the96" repos-name="AttendanceChecker" class="card" />
       </li>
       <li class="item">
-        <p>ぷよぷよテトリスの勝敗を自動でカウントするツールです。</p>
-        <p>
-          ぷよぷよ公式SNSで公開<a href="https://puyo-camp.jp/posts/57455">[1]</a
-          ><a href="https://puyo-camp.jp/posts/57876">[2]</a>し、コミュニティ内で当時のデイリー2,
-          3位くらいの反応をいただきました。
-        </p>
+        <p>ぷよぷよテトリスの連戦の際の勝敗を自動でカウントするツールです。</p>
+        <p>OpenCVでプレイ画面を監視し、勝敗が表示された回数をカウントします。</p>
         <RepositoryCard owner-name="the96" repos-name="PT-Logger" class="card" />
       </li>
       <li class="item">
@@ -54,13 +50,10 @@ export default {
     margin: 36px 0;
 
     .item {
+      list-style: none;
+
       &:nth-child(n + 2) {
         margin-top: 24px;
-      }
-
-      &::before,
-      &::marker {
-        content: '';
       }
 
       a.item-link {
@@ -73,23 +66,6 @@ export default {
 
       .card {
         margin: 24px auto 0;
-      }
-
-      .about {
-        text-decoration: solid underline color.$indigo-400 1px;
-      }
-
-      .details {
-        margin-left: 36px;
-
-        .tool-and-other-caption,
-        .tool-and-other-profiency {
-          margin-top: 16px;
-        }
-
-        .tool-and-other-list {
-          margin-left: 24px;
-        }
       }
     }
   }
