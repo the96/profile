@@ -25,6 +25,7 @@
         <div class="details">
           <p class="description">趣味開発や学生時代、研究や講義でに触っていた言語など。</p>
           <p class="description">関数型のような書き方もできる言語はたのしいです。</p>
+          <p class="description">Lisp(Scheme) は難しいので勘弁してください。</p>
           <p class="tool-and-other-caption font-large">使用言語</p>
           <ul class="tool-and-other-list">
             <li>Java</li>

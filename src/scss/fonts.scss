@@ -1,4 +1,4 @@
-// @use '@/scss/color.scss';
+@use '@/scss/color.scss';
 @import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&Dosis:wght@800&family=Sawarabi+Gothic&family=Ubuntu:wght@300;400;700&display=swap';
 
 $default-font: 'Ubuntu', 'Sawarabi Gothic', sans-serif;
@@ -102,4 +102,5 @@ html {
   font-family: $default-font;
   font-size: $size-default;
   font-weight: 400;
+  color: color.$grey-800;
 }

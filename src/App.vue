@@ -1,10 +1,16 @@
 <template>
-  <Top :ref="refs[0]" />
-  <AboutMe :ref="refs[1]" />
-  <WorkSkill :ref="refs[2]" />
-  <OtherSkill :ref="refs[3]" />
-  <Works :ref="refs[4]" />
-  <Accounts :ref="refs[5]" />
+  <div class="scroll-controller-root">
+    <div class="scroll-wrapper">
+      <ScrollBar :pageCount="pageCount" :current="currentPageNumber" class="scroll-bar" @onClick="clickScroller" />
+      <ScrollIcon :pageCount="pageCount" :current="currentPageNumber" class="scroll-icon" @onClick="clickScroller" />
+    </div>
+  </div>
+  <Top :ref="refs[0]" :id="refs[0]" />
+  <AboutMe :ref="refs[1]" :id="refs[1]" />
+  <WorkSkill :ref="refs[2]" :id="refs[2]" />
+  <OtherSkill :ref="refs[3]" :id="refs[3]" />
+  <Works :ref="refs[4]" :id="refs[4]" />
+  <Accounts :ref="refs[5]" :id="refs[5]" />
 </template>
 
 <script>
@@ -16,13 +22,26 @@ import Works from '@/components/pages/Works.vue'
 import Accounts from '@/components/pages/Accounts.vue'
 
 import _ from 'lodash'
+import ScrollBar from '@/components/presentationals/ScrollBar.vue'
+import ScrollIcon from '@/components/presentationals/ScrollIcon.vue'
 
 export default {
-  components: { Top, AboutMe, WorkSkill, OtherSkill, Works, Accounts },
+  components: {
+    //
+    Top,
+    AboutMe,
+    WorkSkill,
+    OtherSkill,
+    Works,
+    Accounts,
+    //
+    ScrollBar,
+    ScrollIcon,
+  },
   data() {
     return {
       event: Object,
-      scrollIdx: 0,
+      scrollIdx: 1,
       scrollEvent: null,
       scrollAt: null,
       refs: [
@@ -36,36 +55,46 @@ export default {
       ],
     }
   },
+  computed: {
+    pageCount() {
+      return this.refs.length
+    },
+    currentPageNumber() {
+      return this.scrollIdx + 1
+    },
+  },
   methods: {
+    clickScroller(num) {
+      console.log(num)
+      this.goToIdx(num - 1)
+    },
     onScroll(event) {
       this.event = event
+      const idx = this.getCurrentElementIdx()
       if (this.event.deltaY > 0) {
-        this.goToNextElement()
+        const nextIdx = this.getNextElementIdx(idx)
+        this.goToIdx(nextIdx)
       } else if (this.event.deltaY < 0) {
-        this.goToPrevElement()
+        const prevIdx = this.getPrevElementIdx(idx)
+        this.goToIdx(prevIdx)
       }
     },
-    goToNextElement() {
-      const element = this.getNextElement()
+    goToIdx(idx) {
+      const element = this.$refs[this.refs[idx]]
+      if (!element) return
       this.$scrollTo(element.$el)
+      this.scrollIdx = idx
     },
-    goToPrevElement() {
-      const element = this.getPrevElement()
-      this.$scrollTo(element.$el)
-    },
-    getNextElement() {
+    getCurrentElementIdx() {
       const y = window.scrollY
       const height = window.innerHeight
-      const num = Math.floor(y / height)
-      const index = Math.min(num + 1, this.refs.length - 1)
-      return this.$refs[this.refs[index]]
+      return Math.floor(y / height)
     },
-    getPrevElement() {
-      const y = window.scrollY
-      const height = window.innerHeight
-      const num = Math.floor(y / height)
-      const index = Math.max(num, 0)
-      return this.$refs[this.refs[index]]
+    getNextElementIdx(num) {
+      return Math.min(num + 1, this.refs.length - 1)
+    },
+    getPrevElementIdx(num) {
+      return Math.max(num, 0)
     },
   },
   mounted() {
@@ -98,5 +127,20 @@ export default {
 
 #id {
   scroll-behavior: smooth;
+}
+
+.scroll-controller-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .scroll-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+  }
 }
 </style>

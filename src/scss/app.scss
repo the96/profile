@@ -1,3 +1,13 @@
 #app {
+  position: relative;
   min-height: 100vh;
+}
+
+html {
+  scrollbar-width: none; /* Firefox対応のスクロールバー非表示コード */  
+  -ms-overflow-style: none;/* Internet Explore対応のスクロールバー非表示コード */   
+
+  &::-webkit-scrollbar {  
+    display: none; /* Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード */
+  }
 }
