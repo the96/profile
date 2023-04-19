@@ -3,7 +3,7 @@
     <p class="font-xxlarge title">About me</p>
     <div class="content">
       <div class="icon">
-        <img src="src/assets/icon.jpg" class="icon-img" />
+        <img src="/src/assets/icon.jpg" class="icon-img" />
       </div>
       <div class="profile">
         <div class="information">

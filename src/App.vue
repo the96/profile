@@ -2,7 +2,6 @@
   <div class="scroll-controller-root">
     <div class="scroll-wrapper">
       <ScrollBar :pageCount="pageCount" :current="currentPageNumber" class="scroll-bar" @onClick="clickScroller" />
-      <ScrollIcon :pageCount="pageCount" :current="currentPageNumber" class="scroll-icon" @onClick="clickScroller" />
     </div>
   </div>
   <Top :ref="refs[0]" :id="refs[0]" />
@@ -23,7 +22,6 @@ import Accounts from '@/components/pages/Accounts.vue'
 
 import _ from 'lodash'
 import ScrollBar from '@/components/presentationals/ScrollBar.vue'
-import ScrollIcon from '@/components/presentationals/ScrollIcon.vue'
 
 export default {
   components: {
@@ -36,7 +34,6 @@ export default {
     Accounts,
     //
     ScrollBar,
-    ScrollIcon,
   },
   data() {
     return {
@@ -65,7 +62,6 @@ export default {
   },
   methods: {
     clickScroller(num) {
-      console.log(num)
       this.goToIdx(num - 1)
     },
     onScroll(event) {
