@@ -1,6 +1,7 @@
 <template>
   <div class="about-me page">
     <p class="font-xxlarge title">About me</p>
+    <p class="font-medium">経歴や興味など、簡単なプロフィールです。</p>
     <div class="content">
       <div class="icon">
         <img src="/src/assets/icon.jpg" class="icon-img" />

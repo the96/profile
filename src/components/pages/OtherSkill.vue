@@ -1,7 +1,7 @@
 <template>
   <div class="skill page">
     <span class="font-xxlarge">Other Skills</span>
-    <p>趣味や業務の本筋から逸れたスキルです。</p>
+    <p class="font-medium">趣味や業務の本筋から逸れたスキルです。</p>
     <ul class="content">
       <li class="item">
         <span class="about font-xlarge">ワンライナー / シェル</span>

@@ -1,7 +1,7 @@
 <template>
   <div class="skill page">
     <span class="font-xxlarge">Work</span>
-    <p>過去の制作物です。工事中</p>
+    <p class="font-medium">過去の制作物です。工事中</p>
     <ul class="content">
       <li class="item">
         <p class="description">制作物というより記事ですが、お気に入りのワンライナーなのでぜひ。</p>
