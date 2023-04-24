@@ -1,16 +1,16 @@
 <template>
   <div class="accounts page">
     <span class="font-xxlarge">Account</span>
-    <AccountCard user-name="the96"></AccountCard>
+    <GithubAccountCard user-name="the96"></GithubAccountCard>
   </div>
 </template>
 
 <script>
-import AccountCard from '@/components/presentationals/AccountCard.vue'
+import GithubAccountCard from '@/components/presentationals/GithubAccountCard.vue'
 
 export default {
   components: {
-    AccountCard,
+    GithubAccountCard,
   },
 }
 </script>
