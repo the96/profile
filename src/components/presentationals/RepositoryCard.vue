@@ -66,7 +66,7 @@ export default {
 @use '@/scss/color.scss';
 
 .repository-card {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 799px) {
     $width: 320px;
     $height: 160px;
 
@@ -116,7 +116,7 @@ export default {
     }
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     $width: 540px;
     $height: 160px;
 

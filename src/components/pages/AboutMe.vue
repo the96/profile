@@ -12,7 +12,7 @@
           </div>
           <div class="info-group">
             <span class="label font-small">about.</span>
-            <div class="about-group">
+            <div class="about-group font-medium">
               <p class="about">2020年3月、4年制大学で情報学を修了し、同年4月に都内のIT企業に入社しました。</p>
               <br />
               <p class="about">
@@ -102,9 +102,6 @@
     }
 
     .information {
-      @media screen and (max-width: 599px) {
-      }
-
       @media screen and (min-width: 600px) {
         margin-left: 24px;
       }

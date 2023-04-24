@@ -1,5 +1,5 @@
 <template>
-  <div class="account-card">
+  <div class="github-card">
     <div v-if="finishedLoadUser">
       <body class="account" @click="openGitHubProfile()">
         <div class="avatar">
@@ -75,7 +75,7 @@ export default {
 @use '@/scss/page.scss';
 @use '@/scss/color.scss';
 
-.account-card {
+.github-card {
   $width: 240px;
   $height: 450px;
   $padding: 20px;

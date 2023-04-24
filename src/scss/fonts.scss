@@ -1,5 +1,5 @@
 @use '@/scss/color.scss';
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;700&Dosis:wght@800&family=Sawarabi+Gothic&family=Ubuntu:wght@300;400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;600;700&Dosis:wght@800&family=Sawarabi+Gothic&family=Ubuntu:wght@300;600;700&display=swap';
 
 $default-font: 'Ubuntu', 'Sawarabi Gothic', sans-serif;
 $logo-font: 'Dosis', sans-serif;
@@ -17,71 +17,99 @@ $size-xxlarge: 72px;
 }
 
 .font-xxsmall {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: 8px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-xxxsmall;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-xxsmall;
   }
 }
 
 .font-xsmall {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: 10px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-xxsmall;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-xsmall;
   }
 }
 
 .font-small {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: $size-xxsmall;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-xsmall;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-small;
   }
 }
 
 .font-medium {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: $size-xsmall;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-small;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-default;
   }
 }
 
 .font-large {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: $size-small;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-default;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-large;
   }
 }
 
 .font-xlarge {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: $size-default;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-large;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-xlarge;
   }
 }
 
 .font-xxlarge {
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 600px) {
+    font-size: $size-xlarge;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     font-size: $size-xxlarge * 0.75;
   }
   
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 800px) {
     font-size: $size-xxlarge;
   }
 }
@@ -101,6 +129,6 @@ $size-xxlarge: 72px;
 html {
   font-family: $default-font;
   font-size: $size-default;
-  font-weight: 400;
+  font-weight: 600;
   color: color.$grey-800;
 }
